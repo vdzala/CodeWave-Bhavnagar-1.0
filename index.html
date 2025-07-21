@@ -1,96 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CodeWave Bhavnagar 1.0</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #222; }
-    header, footer { background: #0066cc; color: white; padding: 1rem 2rem; text-align: center; }
-    nav { background: #eee; padding: 0.5rem; text-align: center; }
-    nav a { margin: 0 1rem; text-decoration: none; color: #0066cc; font-weight: bold; }
-    main { padding: 2rem; }
-    section { margin-bottom: 2rem; }
-    h2 { color: #0066cc; }
-    iframe { width: 100%; height: 800px; border: none; }
-    .contact { background: #f9f9f9; padding: 1rem; border-radius: 6px; }
+    /* Reset & dark theme */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #121212;
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      text-shadow: 0 0 12px #ffffffaa;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { text-shadow: 0 0 8px #fff; }
+      50% { text-shadow: 0 0 20px #00c6ff; }
+    }
+
+    .countdown {
+      text-align: center;
+      font-size: 1.5rem;
+      margin: 2rem 0;
+      color: #00ffd5;
+    }
+
+    .slab {
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    }
+
+    .slab h2 {
+      margin-bottom: 1rem;
+      color: #00e0ff;
+    }
+
+    .slab ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    .slab ul li::before {
+      content: "•";
+      margin-right: 0.5rem;
+      color: #00e0ff;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin-top: 1rem;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>CodeWave Bhavnagar 1.0</h1>
-    <p>District-Level Web Development Hackathon | Shantilal Shah Engineering College</p>
+    <p>District-Level Web Development Hackathon</p>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#rules">Rules</a>
-    <a href="#schedule">Schedule</a>
-    <a href="#register">Register</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="countdown" id="countdown">
+    Hackathon begins in: Loading...
+  </div>
 
-  <main>
-    <section id="about">
-      <h2>About the Event</h2>
-      <p><strong>Date:</strong> Tentatively before 9th August 2025</p>
-      <p><strong>Time:</strong> 10:30 AM – 5:30 PM</p>
-      <p><strong>Venue:</strong> Shantilal Shah Engineering College</p>
-      <p><strong>Organized by:</strong> Techno Club – IT Department</p>
-      <p><strong>Objective:</strong> To inspire innovation, collaboration, and real-world problem-solving among students across Bhavnagar district by hosting a competitive yet educational hackathon focused on building functional websites within a time constraint.</p>
-    </section>
+  <div class="slab">
+    <h2>Event Info</h2>
+    <ul>
+      <li>Date: Before 9th August 2025</li>
+      <li>Time: 10:30 AM – 5:30 PM</li>
+      <li>Venue: Shantilal Shah Engineering College</li>
+      <li>Team Size: 2–4 members</li>
+      <li>100 Participants | Labs: 4–5 (IT Dept)</li>
+    </ul>
+  </div>
 
-    <section id="rules">
-      <h2>Participation & Rules</h2>
-      <ul>
-        <li>Open to all colleges in Bhavnagar district.</li>
-        <li>Max 100 participants. Teams of 2–4 members.</li>
-        <li>Shortlisting based on GitHub/project submissions.</li>
-        <li>Website theme revealed at event start.</li>
-        <li>Use any tech stack. Internet provided.</li>
-      </ul>
-      <h3>Judging Criteria</h3>
-      <ul>
-        <li>Creativity & UI/UX</li>
-        <li>Functionality & Responsiveness</li>
-        <li>Code Quality</li>
-        <li>Theme Relevance</li>
-        <li>Final Presentation</li>
-      </ul>
-    </section>
-
-    <section id="schedule">
-      <h2>Event Schedule</h2>
-      <ul>
-        <li><strong>10:30 AM:</strong> Inauguration & Welcome</li>
-        <li><strong>11:00 AM:</strong> Theme Reveal & Hackathon Begins</li>
-        <li><strong>1:30 PM:</strong> Lunch Break</li>
-        <li><strong>2:00 PM:</strong> Hackathon Resumes</li>
-        <li><strong>5:00 PM:</strong> Submission Deadline</li>
-        <li><strong>5:30 PM:</strong> Winner Announcement</li>
-      </ul>
-    </section>
-
-    <section id="register">
-      <h2>Register Now</h2>
-      <p>Form closes 1 week before event. Final team selection by 31st July 2025.</p>
-      <!-- 🔗 Replace this src with your Google Form embed link -->
-      <iframe src="https://docs.google.com/forms/d/e/your-form-id/viewform?embedded=true">Loading…</iframe>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="contact">
-        <p><strong>Techno Club President:</strong> Vikas Zala – +91 92277 22144</p>
-        <p><strong>Vice President:</strong> Aaryash – +91 92277 22144</p>
-      </div>
-    </section>
-  </main>
+  <div class="slab">
+    <h2>Register Now</h2>
+    <p>Submit your GitHub/project prototype by 31st July 2025</p>
+    <!-- Replace the src URL below with your actual Google Form embed URL -->
+    <iframe src="https://docs.google.com/forms/d/e/your-form-id/viewform?embedded=true">Loading…</iframe>
+  </div>
 
   <footer>
-    <p>&copy; 2025 CodeWave Bhavnagar | Organized by Techno Club – IT Dept</p>
+    &copy; 2025 CodeWave Hackathon | Techno Club, IT Department
   </footer>
+
+  <script>
+    // Countdown Timer Script
+    const targetDate = new Date("August 9, 2025 10:30:00").getTime();
+    const countdown = document.getElementById("countdown");
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance < 0) {
+        countdown.innerHTML = "The hackathon has started!";
+      } else {
+        countdown.innerHTML = `Hackathon begins in: <strong>${days}d ${hours}h ${minutes}m ${seconds}s</strong>`;
+      }
+    }, 1000);
+  </script>
 
 </body>
 </html>
